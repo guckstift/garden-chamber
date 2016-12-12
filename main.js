@@ -61,10 +61,13 @@ function main()
 	game.peep1Snd = new Sound("sounds/peep2.ogg");
 	game.peep2Snd = new Sound("sounds/peep3.ogg");
 	game.peep3Snd = new Sound("sounds/futfut.ogg");
-	
 	game.cat0Snd = new Sound("sounds/fauch.ogg");
 	game.cat1Snd = new Sound("sounds/knurr.ogg");
 	game.cat2Snd = new Sound("sounds/meow.ogg");
+	game.cat3Snd = new Sound("sounds/meow2.ogg");
+	game.splash0Snd = new Sound("sounds/splash1.ogg");
+	game.splash1Snd = new Sound("sounds/splash2.ogg");
+	game.blopSnd = new Sound("sounds/blop.ogg");
 }
 
 function onImagesLoaded()
@@ -262,9 +265,10 @@ function onMousup(e)
 				var plant = new Plant(mapCoord[0], mapCoord[1], "tree", 6);
 			}
 			game.world.setTile(mapCoord[0], mapCoord[1], plant);
+			game.blopSnd.play();
 		}
 		else if(game.tool == "w" && tile != null && tile.type == "p" && tile.state != "d") {
-			tile.water = 1;
+			tile.giveWater();
 		}
 	}
 }

@@ -49,7 +49,7 @@ BatCat.prototype.animate = function ()
 	}
 	
 	if(Math.random() < 0.01) {
-		var sound = game["cat" + Math.floor(Math.random()*3) + "Snd"];
+		var sound = game["cat" + Math.floor(Math.random() * 4) + "Snd"];
 		
 		if (this.soundid === false || !sound.howl.playing(this.soundid)) {
 			var pan = this.x / game.screenWidth * 2 - 0.5;

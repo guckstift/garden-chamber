@@ -140,4 +140,9 @@ Plant.prototype.decay = function ()
 	game.world.setTile(this.mx, this.my, ground);
 }
 
+Plant.prototype.giveWater = function ()
+{
+	this.water = 1;
+	game["splash" + Math.floor(Math.random()*2) + "Snd"].play();
+}
 
