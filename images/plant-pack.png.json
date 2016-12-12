@@ -1,0 +1,196 @@
+{"frames": {
+
+"tree6.png":
+{
+	"frame": {"x":0,"y":0,"w":64,"h":88},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":40,"w":64,"h":88},
+	"sourceSize": {"w":64,"h":128}
+},
+"plant3.png":
+{
+	"frame": {"x":128,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"tree5.png":
+{
+	"frame": {"x":64,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"flower4.png":
+{
+	"frame": {"x":0,"y":88,"w":64,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":64,"h":63},
+	"sourceSize": {"w":64,"h":64}
+},
+"flower3.png":
+{
+	"frame": {"x":192,"y":0,"w":64,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":64,"h":63},
+	"sourceSize": {"w":64,"h":64}
+},
+"rose5.png":
+{
+	"frame": {"x":128,"y":88,"w":64,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":64,"h":62},
+	"sourceSize": {"w":64,"h":64}
+},
+"plant2.png":
+{
+	"frame": {"x":64,"y":88,"w":64,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":64,"h":62},
+	"sourceSize": {"w":64,"h":64}
+},
+"rose4.png":
+{
+	"frame": {"x":192,"y":88,"w":64,"h":59},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":64,"h":59},
+	"sourceSize": {"w":64,"h":64}
+},
+"flower2.png":
+{
+	"frame": {"x":0,"y":151,"w":64,"h":59},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":64,"h":59},
+	"sourceSize": {"w":64,"h":64}
+},
+"tree4.png":
+{
+	"frame": {"x":64,"y":151,"w":64,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":64,"h":57},
+	"sourceSize": {"w":64,"h":64}
+},
+"rose3.png":
+{
+	"frame": {"x":128,"y":151,"w":64,"h":53},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":11,"w":64,"h":53},
+	"sourceSize": {"w":64,"h":64}
+},
+"tree3.png":
+{
+	"frame": {"x":192,"y":151,"w":64,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":17,"w":64,"h":47},
+	"sourceSize": {"w":64,"h":64}
+},
+"flower1.png":
+{
+	"frame": {"x":0,"y":210,"w":64,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":22,"w":64,"h":42},
+	"sourceSize": {"w":64,"h":64}
+},
+"rose2.png":
+{
+	"frame": {"x":64,"y":210,"w":64,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":24,"w":64,"h":40},
+	"sourceSize": {"w":64,"h":64}
+},
+"rose1.png":
+{
+	"frame": {"x":128,"y":210,"w":64,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":24,"w":64,"h":40},
+	"sourceSize": {"w":64,"h":64}
+},
+"tree2.png":
+{
+	"frame": {"x":192,"y":210,"w":64,"h":39},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":25,"w":64,"h":39},
+	"sourceSize": {"w":64,"h":64}
+},
+"plantbtn.png":
+{
+	"frame": {"x":0,"y":252,"w":46,"h":54},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":6,"w":46,"h":54},
+	"sourceSize": {"w":64,"h":64}
+},
+"plant1.png":
+{
+	"frame": {"x":110,"y":252,"w":64,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":30,"w":64,"h":34},
+	"sourceSize": {"w":64,"h":64}
+},
+"deadplant.png":
+{
+	"frame": {"x":46,"y":252,"w":64,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":30,"w":64,"h":34},
+	"sourceSize": {"w":64,"h":64}
+},
+"tree1.png":
+{
+	"frame": {"x":174,"y":252,"w":64,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":31,"w":64,"h":33},
+	"sourceSize": {"w":64,"h":64}
+},
+"flowerbtn.png":
+{
+	"frame": {"x":0,"y":306,"w":35,"h":54},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":4,"w":35,"h":54},
+	"sourceSize": {"w":64,"h":64}
+},
+"rosebtn.png":
+{
+	"frame": {"x":35,"y":306,"w":35,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":8,"w":35,"h":49},
+	"sourceSize": {"w":64,"h":64}
+},
+"treebtn.png":
+{
+	"frame": {"x":70,"y":306,"w":34,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":11,"w":34,"h":45},
+	"sourceSize": {"w":64,"h":64}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "plant-pack.png.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7e800a2bbfed0b5e3f36ae983cd1f5fd:7c3764200fca438355dd656faba3a7d7:26ab6ae278e38c200cc72e2ec49759a7$"
+}
+}

@@ -1,0 +1,52 @@
+{"frames": {
+
+"bird1.png":
+{
+	"frame": {"x":1,"y":1,"w":268,"h":115},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":67,"w":268,"h":115},
+	"sourceSize": {"w":289,"h":202}
+},
+"bird2.png":
+{
+	"frame": {"x":271,"y":1,"w":234,"h":132},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":67,"w":234,"h":132},
+	"sourceSize": {"w":289,"h":202}
+},
+"bird3.png":
+{
+	"frame": {"x":1,"y":275,"w":246,"h":128},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":72,"w":246,"h":128},
+	"sourceSize": {"w":289,"h":202}
+},
+"bird4.png":
+{
+	"frame": {"x":1,"y":405,"w":247,"h":93},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":31,"y":64,"w":247,"h":93},
+	"sourceSize": {"w":289,"h":202}
+},
+"bird5.png":
+{
+	"frame": {"x":1,"y":118,"w":266,"h":155},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":2,"w":266,"h":155},
+	"sourceSize": {"w":289,"h":202}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gaybird.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b306c3d165440a5e347af6c5408ae0c1:06db403e5c17418226ef0e4610d03d71:e644d65b499114a1f5917ee58d3e60df$"
+}
+}
