@@ -66,7 +66,7 @@ Wall.prototype.onRender = function ()
 		this.willWither = true;
 	}
 	
-	if(this.greened == 0 && !this.willIndent) {
+	if(game.playerstarted && this.greened == 0 && !this.willIndent) {
 		setTimeout(function () { that.indent(); }, 5*1000 + Math.random() * 55*1000);
 		this.willIndent = true;
 	}
@@ -134,6 +134,9 @@ Wall.prototype.indent = function ()
 Wall.prototype.maybeWither = function ()
 {
 	var that = this;
+	
+	if(this.gone)
+		return;
 	
 	if(game.score >= 100) {
 		game.world.setTile(this.mx, this.my, new Ground(this.mx, this.my));

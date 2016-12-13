@@ -20,7 +20,8 @@ function main()
 		tool: "p",
 		scrolling: false,
 		score: 0,
-		won: false
+		won: false,
+		playerstarted: false
 	};
 	
 	// create renderer
@@ -254,7 +255,8 @@ function onResizeWindow()
 
 	game.lblScore.position.set(game.screenWidth - 32, 32);
 	
-	game.infoBox.position.set(game.screenWidth/2, game.screenHeight - 32);
+	if(game.infoBox)
+		game.infoBox.position.set(game.screenWidth/2, game.screenHeight - 32);
 }
 
 function onKeydown(e)
@@ -308,6 +310,7 @@ function onMousup(e)
 			}
 			game.world.setTile(mapCoord[0], mapCoord[1], plant);
 			game.blopSnd.play();
+			game.playerstarted = true;
 		}
 	}
 }
@@ -385,7 +388,7 @@ function win()
 {
 	game.won = true;
 	game.lblWin = new PIXI.Text("You made the sky bright again :)",
-		{fontFamily: "sans", font: "64px sans-serif", fill: 0x00aa00});
+		{fontFamily: "sans", font: "64px sans-serif", fill: 0x6666ff});
 	game.lblWin.anchor.set(0.5);
 	game.lblWin.position.x = game.screenWidth/2;
 	game.lblWin.position.y = game.screenHeight/2;

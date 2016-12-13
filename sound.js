@@ -19,7 +19,7 @@ Sound.prototype.play = function (looped, pan, vol)
 	
 	this.howl.loop (looped);
 	var id = this.howl.play ();
-	this.howl.stereo (pan, id);
+	this.howl.stereo (Math.min(1, Math.max(-1, pan)), id);
 	this.howl.volume (vol, id);
 	return id;
 }
