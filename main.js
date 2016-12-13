@@ -68,6 +68,9 @@ function main()
 	game.splash0Snd = new Sound("sounds/splash1.ogg");
 	game.splash1Snd = new Sound("sounds/splash2.ogg");
 	game.blopSnd = new Sound("sounds/blop.ogg");
+	
+	game.darkMusic = new Sound("sounds/musicdark.ogg");
+	game.lightMusic = new Sound("sounds/musiclight.ogg");
 }
 
 function onImagesLoaded()
@@ -180,6 +183,10 @@ function onImagesLoaded()
 	// spawn batcat or gay bird
 	setTimeout(spawnGuy, 1000);
 	
+	// start music
+	game.darkTrack = game.darkMusic.play(true);
+	game.lightTrack = game.lightMusic.play(true);
+	
 	gameLoop();
 }
 
@@ -192,6 +199,10 @@ function gameLoop()
 	
 	// update sky
 	game.sky2.alpha = Math.min(1, game.score / 100);
+	
+	// update music
+	game.darkMusic.howl.volume(1 - game.score/100, game.darkTrack);
+	game.lightMusic.howl.volume(game.score/100, game.lightTrack);
 
 	// render frame
 	game.world.onRender();

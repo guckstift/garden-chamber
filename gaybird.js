@@ -52,8 +52,7 @@ GayBird.prototype.animate = function ()
 		this.destroy();
 		this.gone = true;
 	}
-	
-	if(Math.random() < 0.01) {
+	else if(Math.random() < 0.01) {
 		var sound = game["peep" + Math.floor(Math.random()*4) + "Snd"];
 		
 		if (this.soundid === false || !sound.howl.playing(this.soundid)) {

@@ -11,15 +11,16 @@ function Sound (src, onLoadCallback)
 	});
 }
 
-Sound.prototype.play = function (looped, pan)
+Sound.prototype.play = function (looped, pan, vol)
 {
 	looped = looped || false;
 	pan = pan || 0;
+	vol = vol || 1;
 	
 	this.howl.loop (looped);
 	var id = this.howl.play ();
-	console.log(pan);
 	this.howl.stereo (pan, id);
+	this.howl.volume (vol, id);
 	return id;
 }
 
