@@ -32,19 +32,19 @@ function main()
 	
 	// create stage
 	game.world = new World();
-	
 	game.bg = new PIXI.Container();
-	
 	game.screen = new PIXI.Container();
+	game.hud = new PIXI.Container();
 	
 	game.lblScore = new PIXI.Text("Hello", {fontFamily: "sans", font: "32px sans-serif", fill: 0x00ff00});
 	game.lblScore.anchor.set(1, 0);
-	game.screen.addChild(game.lblScore);
+	game.hud.addChild(game.lblScore);
 	
 	game.stage = new PIXI.Container();
 	game.stage.addChild(game.bg);
 	game.stage.addChild(game.world);
 	game.stage.addChild(game.screen);
+	game.stage.addChild(game.hud);
 	
 	$("body").append(game.renderer.view);
 
@@ -55,6 +55,7 @@ function main()
 		.add("gaybird", "images/gaybird.json")
 		.add("sky1", "images/sky1.jpg")
 		.add("sky2", "images/sky2.jpg")
+		.add("help", "images/info.png")
 		.load(onImagesLoaded)
 	;
 	
@@ -163,12 +164,35 @@ function onImagesLoaded()
 		game.selectedbtn.position = game.waterbtn.position;
 		game.toolCursor.setTexture(game.waterbtnTex);
 	});
-	game.screen.addChild(game.waterbtn);
+	game.hud.addChild(game.waterbtn);
 	
 	game.toolCursor = new PIXI.Sprite(game.plantbtnTex);
 	game.toolCursor.anchor.set(0.5, 0.5);
 	game.toolCursor.scale.set(0.5, 0.5);
-	game.screen.addChild(game.toolCursor);
+	game.hud.addChild(game.toolCursor);
+	
+	// info box
+	game.infoBox = new PIXI.Sprite(game.helpTex);
+	game.infoBox.anchor.set(0.5, 1);
+	game.infoBox.interactive = true;
+	game.infoBox.buttonMode = true;
+	game.infoBox.on("mousedown", function () {
+		function fade()
+		{
+			game.infoBox.alpha -= 0.01;
+			
+			if(game.infoBox.alpha <= 0) {
+				game.hud.removeChild(game.infoBox);
+				game.infoBox = null;
+			}
+			else {
+				requestAnimationFrame(fade);
+			}
+		}
+		
+		requestAnimationFrame(fade);
+	});
+	game.hud.addChild(game.infoBox);
 	
 	// setup view
 	onResizeWindow();	
@@ -229,6 +253,8 @@ function onResizeWindow()
 	game.sky2.scale.set(ratio);
 
 	game.lblScore.position.set(game.screenWidth - 32, 32);
+	
+	game.infoBox.position.set(game.screenWidth/2, game.screenHeight - 32);
 }
 
 function onKeydown(e)
@@ -330,7 +356,7 @@ function createPlantBtn(name, tool, x, y)
 		game.selectedbtn.position = btn.position;
 		game.toolCursor.setTexture(game[name + "btnTex"]);
 	});
-	game.screen.addChild(btn);
+	game.hud.addChild(btn);
 	game[name + "btn"] = btn;
 }
 
@@ -367,6 +393,14 @@ function win()
 	game.screen.addChild(game.lblWin);
 	game.ticles = [];
 	
+	function onresize()
+	{
+		game.lblWin.position.x = game.screenWidth/2;
+		game.lblWin.position.y = game.screenHeight/2;
+	}
+	
+	$(window).resize(onresize);
+	
 	function ani()
 	{
 		if(game.lblWin.alpha < 1)
@@ -379,7 +413,15 @@ function win()
 		}
 		
 		game.ticles.forEach(function (x) {
-			x.onRender();
+			if(x.y < game.screenHeight+64)
+				x.onRender();
+			else {
+				game.screen.removeChild(x);
+				var index = game.ticles.indexOf(x);
+				if (index > -1) {
+ 					game.ticles.splice(index, 1);
+				}
+			}
 		});
 		
 		setTimeout(function() {requestAnimationFrame(ani);}, 1000 / fps);
