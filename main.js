@@ -278,9 +278,6 @@ function onMousup(e)
 			game.world.setTile(mapCoord[0], mapCoord[1], plant);
 			game.blopSnd.play();
 		}
-		else if(game.tool == "w" && tile != null && tile.type == "p" && tile.state != "d") {
-			tile.giveWater();
-		}
 	}
 }
 
@@ -306,6 +303,12 @@ function onMousmove(e)
 		
 		game.toolCursor.x = mouseX;
 		game.toolCursor.y = mouseY;
+		
+		if ((e.buttons&1) == 1) {
+			if(game.tool == "w" && tile != null && tile.type == "p" && tile.state != "d") {
+				tile.giveWater();
+			}
+		}
 	}
 }
 	

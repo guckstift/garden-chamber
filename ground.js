@@ -10,7 +10,6 @@ subclass(Ground, Tile)
 
 Ground.prototype.setGreen = function(yes)
 {
-	console.log("set green",yes);
 	var that = this;
 	
 	this.green = yes;

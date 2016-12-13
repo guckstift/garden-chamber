@@ -142,7 +142,9 @@ Plant.prototype.decay = function ()
 
 Plant.prototype.giveWater = function ()
 {
-	this.water = 1;
-	game["splash" + Math.floor(Math.random()*2) + "Snd"].play();
+	if(this.water < 0.9) {
+		this.water = 1;
+		game["splash" + Math.floor(Math.random()*2) + "Snd"].play();
+	}
 }
 
