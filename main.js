@@ -19,7 +19,8 @@ function main()
 		keymap: {},
 		tool: "p",
 		scrolling: false,
-		score: 0
+		score: 0,
+		won: false
 	};
 	
 	// create renderer
@@ -203,6 +204,10 @@ function gameLoop()
 	// update music
 	game.darkMusic.howl.volume(1 - game.score/100, game.darkTrack);
 	game.lightMusic.howl.volume(game.score/100, game.lightTrack);
+	
+	if(game.score >= 100 && !game.won) {
+		win();
+	}
 
 	// render frame
 	game.world.onRender();
@@ -349,3 +354,37 @@ function spawnGuy()
 		game.screen.addChild(new GayBird());
 	setTimeout(spawnGuy, 2000 + Math.random() * 1000 * 2);
 }
+
+function win()
+{
+	game.won = true;
+	game.lblWin = new PIXI.Text("You made the sky bright again :)",
+		{fontFamily: "sans", font: "64px sans-serif", fill: 0x00aa00});
+	game.lblWin.anchor.set(0.5);
+	game.lblWin.position.x = game.screenWidth/2;
+	game.lblWin.position.y = game.screenHeight/2;
+	game.lblWin.alpha = 0;
+	game.screen.addChild(game.lblWin);
+	game.ticles = [];
+	
+	function ani()
+	{
+		if(game.lblWin.alpha < 1)
+			game.lblWin.alpha += 0.01;
+		
+		if(Math.random() < 0.5) {
+			var pa = new Particle();
+			game.screen.addChild(pa);
+			game.ticles.push(pa);
+		}
+		
+		game.ticles.forEach(function (x) {
+			x.onRender();
+		});
+		
+		setTimeout(function() {requestAnimationFrame(ani);}, 1000 / fps);
+	}
+	
+	setTimeout(function() {requestAnimationFrame(ani);}, 1000 / fps);
+}
+
